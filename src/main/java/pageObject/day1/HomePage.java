@@ -13,7 +13,7 @@ public class HomePage extends BaseFunc {
     }
 
     @FindBy(how = How.XPATH, using = "//a[@href='/chapter1']")
-    private WebElement chapterOne;
+    public WebElement chapterOne;
 
     public void clickChapterOne() {
         chapterOne.click();
