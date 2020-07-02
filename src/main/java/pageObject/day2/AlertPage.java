@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class AlertPage extends BaseFunc {
+
     public AlertPage(WebDriver driver) {
         super(driver);
     }

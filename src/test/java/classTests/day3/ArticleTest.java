@@ -1,11 +1,12 @@
-package classTests.day2;
+package classTests.day3;
 
 import baseWebTest.BaseWebTest;
+import model.Article;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObject.day3.DelfiHomePage;
 
-public class DelfiTest extends BaseWebTest {
+public class ArticleTest extends BaseWebTest {
 
     @BeforeClass
     public void navigateTo() {
@@ -13,10 +14,11 @@ public class DelfiTest extends BaseWebTest {
     }
 
     @Test
-    public void checkingDelfi() {
+    public void articleTest() {
         DelfiHomePage homePage = new DelfiHomePage(driver);
 
-//        homePage.selectMenuItem("Ārzemēs");
-        homePage.clickArticles(21);
+        Article articleHome = homePage.getArticleTitleAndComment(2);
+        System.out.println(articleHome.getTitle() + "\n" + articleHome.getCommentNumber());
     }
+
 }
