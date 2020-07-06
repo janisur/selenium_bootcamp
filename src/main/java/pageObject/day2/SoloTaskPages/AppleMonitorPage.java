@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -69,18 +70,6 @@ public class AppleMonitorPage extends BaseFunc {
         textArea.sendKeys(textAreaText);
     }
 
-    //UPLOAD
-
-    @FindBy(how = How.ID, using = "button-upload222")
-    private WebElement fileToUpload;
-
-    String path = System.getProperty("user.dir") + "\\src\\resources\\apple_cinema.jpg";
-
-    public void uploadFile() {
-        fileToUpload.click();
-//        fileToUpload.sendKeys(path);
-        }
-
     //DATE PICKER
 
     public String date;
@@ -110,7 +99,7 @@ public class AppleMonitorPage extends BaseFunc {
 
     public void setTimeAndDatePicker(String date, String time) {
         timeAndDatePicker.clear();
-        timeAndDatePicker.sendKeys(date + " ",time);
+        timeAndDatePicker.sendKeys(date + " ", time);
     }
 
     //QUANTITY
@@ -118,7 +107,7 @@ public class AppleMonitorPage extends BaseFunc {
     @FindBy(how = How.XPATH, using = "//input[@id='input-quantity']")
     private WebElement quantity;
 
-    public void setQuantity(String number){
+    public void setQuantity(String number) {
         quantity.clear();
         quantity.sendKeys(number);
     }
@@ -128,7 +117,25 @@ public class AppleMonitorPage extends BaseFunc {
     @FindBy(how = How.XPATH, using = "//button[contains(@class,'btn btn-primary btn-lg btn-block')]")
     private WebElement addToCartButton;
 
-    public void clickAddToCartButton(){
+    public void clickAddToCartButton() {
         addToCartButton.click();
+    }
+
+    //CLICKONCART
+
+    @FindBy(how = How.XPATH,using = "//button[@class='btn btn-inverse btn-block btn-lg dropdown-toggle']")
+    private WebElement cartButton;
+
+    public void clickCartButton(){
+        cartButton.click();
+    }
+
+    //CLICKCHECKOUT
+
+    @FindBy(how = How.XPATH,using = "//a[contains(@href,'/checkout')]")
+    private WebElement checkoutLink;
+
+    public void clickCheckoutLink(){
+        checkoutLink.click();
     }
 }

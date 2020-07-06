@@ -57,4 +57,8 @@ public class BaseFunc {
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
+//    public void selectByValue(WebElement element, String value) {
+//        select = new Select(element);
+//        select.selectByValue(value);
+//    }
 }
